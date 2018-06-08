@@ -22,15 +22,12 @@ class Credentialdata:
     credential_list = []
     user_credential_list = []
 
-def __init__(self,username,password):
-    self.username= username
-    self.password= password
+    def __init__(self,username,password):
+        self.username= username
+        self.password= password
 
-def save_credential(self):
-    Credentialdata.credential_list.append(self)
+    def save_credential(self):
+        Credentialdata.credential_list.append(self)
 
-def delete_credential(self):
-    Credentialdata.credential_list.append(self)
-
-
-    
+    def delete_credential(self):
+        Credentialdata.credential_list.append(self)

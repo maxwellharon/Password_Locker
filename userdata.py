@@ -14,3 +14,8 @@ class Userdata:
         """
         """
         Userdata:userdata.append(self)
+
+class Credentialdata:
+    """
+    A class that has credentials of the user
+    """

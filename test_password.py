@@ -18,5 +18,11 @@ class TestUserdata(unittest.TestCase):
         self.assertEqual(self.new_userdata.email,"maxwell_haron@icloud.com" )
         self.assertEqual(self.new_userdata.number,"0711223344")
 
+    def tearDown(self):
+        """
+        cleans up after each test run
+        """
+        Credentialdata.credential_list = []    
+
 if __name__ == '__main__':
     unittest.main()

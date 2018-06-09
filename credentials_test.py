@@ -106,3 +106,10 @@ class TestCredentials(unittest.TestCase):
         Credentials.copy_username("Max")
 
         self.assertEqual(self.new_credentials.account_name, pyperclip.paste())
+
+class TestUser(unittest.TestCase):
+    def setUp(self):
+        '''
+        method run before each test case
+        '''
+        self.new_user = User("KimaniNjoroge", "passwd")

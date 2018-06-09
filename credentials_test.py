@@ -120,4 +120,9 @@ class TestUser(unittest.TestCase):
         Method to give an empty array before each test for more accurate results
         '''
         User.user_list = []
-    
+    def test_user_init(self):
+        '''
+        method to test if our users are being instantiated correctly
+        '''
+        self.assertEqual(self.new_user.login_name, "KimaniNjoroge")
+        self.assertEqual(self.new_user.password, "passwd")

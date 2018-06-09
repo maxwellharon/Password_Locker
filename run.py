@@ -29,3 +29,15 @@ class Credentials:
         delete_contact method deletes an object from the credentials_list
         '''
         Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def find_by_account_name(cls, name):
+        '''
+        This is a method that in whicha user can fin credentias by name search
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.account_name == name:
+                return credentials
+
+
+                  

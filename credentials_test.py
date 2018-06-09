@@ -74,4 +74,16 @@ class TestCredentials(unittest.TestCase):
         found_credentials = Credentials.find_by_account_name("Twitter")
 
         self.assertEqual(found_credentials.email, test_credentials.email)
-    
+
+
+    def test_credentials_exist(self):
+        '''
+        Check if a credentials exist and return a boolean
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Twitter", "t_uname", "t_uname@gmail", "passwd")
+        test_credentials.save_credentials()
+
+        credentials_exist = Credentials.credentials_exist
+        self.assertTrue(credentials_exist)

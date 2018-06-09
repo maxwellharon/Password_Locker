@@ -18,3 +18,12 @@ class User:
         '''
 
         User.user_list.append(self)
+
+    @classmethod
+    def user_login (cls, login):
+        '''
+        This is a method in which a user can check his/her credentials
+        '''
+        for User in cls.user_list:
+            if User.login_name == login:
+                return User

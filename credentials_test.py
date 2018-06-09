@@ -113,3 +113,11 @@ class TestUser(unittest.TestCase):
         method run before each test case
         '''
         self.new_user = User("KimaniNjoroge", "passwd")
+
+
+    def tearDown(self):
+        '''
+        Method to give an empty array before each test for more accurate results
+        '''
+        User.user_list = []
+    

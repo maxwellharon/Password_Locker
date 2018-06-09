@@ -8,4 +8,12 @@ class Credentials:
     credentials_list = []
     user_password_list = []
 
-    
+
+    def __init__(self, account_name, user_name, email, password):
+        '''
+        This is a method that helps us define the properties of the users credentials
+        '''
+        self.account_name = account_name
+        self.user_name = user_name
+        self.email = email
+        self.password = password

@@ -146,3 +146,18 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
 
         self.assertEqual(len(User.user_list), 2)
+
+    def test_login(self):
+        '''
+        method to test login credentials
+        '''
+        self.new_user.save_user()
+        test_user = User("maxwell_haron", "password")
+        test_user.save_user()
+
+        login_credentials = User.user_login("maxwell_haron")
+        self.assertEqual(login_credentials.login_name, test_user.login_name)
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

@@ -134,4 +134,15 @@ class TestUser(unittest.TestCase):
         Method to test if users are being saved
         '''
         self.new_user.save_user()
-        self.assertEqual(len(User.user_list), 1)    
+        self.assertEqual(len(User.user_list), 1)
+
+
+    def test_save_multiple_user(self):
+        '''
+        Method to test if multiple users ate being saved
+        '''
+        self.new_user.save_user()
+        test_user = User("BobBo", "pass")
+        test_user.save_user()
+
+        self.assertEqual(len(User.user_list), 2)

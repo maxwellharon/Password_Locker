@@ -32,3 +32,18 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.user_name, "_Max")
         self.assertEqual(self.new_credentials.email, "maxwell_haron@icloud.com")
         self.assertEqual(self.new_credentials.password, "maxisawesome")
+
+
+    def test_save_credentials(self):
+        '''
+        Test case to test if the contact object is saved into the credentials
+        list
+        '''
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
+
+    def test_save_multiple_credentials(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Test", "t_un", "t_u@gmail", "pwd")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 2)
